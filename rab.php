@@ -48,6 +48,7 @@ if (isset($_SESSION['idUser']))
                 <a href=\"index.php?action=out\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Выход</a><br>
                 </td>";
             echo "<a href=\"test.php\">Тесты</a>";
+            break; 
         }
     }
 }

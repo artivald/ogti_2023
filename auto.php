@@ -23,7 +23,7 @@ include_once("phhp.php");
  <!--     <div class="inputBox"> 
        <input type="mail" required> <i>Почта</i> 
       </div>--->
-      <div class="links"> <a href="../index.html">Забыли пароль?</a> <a href="reg.php">Нету аккаунта</a> 
+      <div class="links"> <a href="index.html">Забыли пароль?</a> <a href="reg.php">Нету аккаунта</a> 
       </div>  
       <div class="inputBox"> 
        <input type="submit" name="GoAutor" value="Войти"> 

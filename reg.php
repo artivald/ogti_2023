@@ -77,7 +77,7 @@
       <div class="inputBox"> 
        <input type="birthday" required name="d9"> <i>Должность</i> 
       </div> 
-      <div class="links"> <a href="./login/index.html">Есть аккаунт?</a> <a href="./login/index.html">Войти</a> 
+      <div class="links"> <a href="index.html">Есть аккаунт?</a> <a href="index.html">Войти</a> 
 
       </div> 
 

@@ -8,7 +8,7 @@
     $lastLineData = explode('#', $lastLine);
     $lastId = intval($lastLineData[0]);
     $newId = $lastId + 1;
-    $data = $newId.'#'.$_POST['d1'].'#'.$_POST['d2'].'#'.$_POST['d3'].'#'.$_POST['d4'].'#'.$_POST['d5'].'#'.$_POST['d6'].'#'.$_POST['d7'].'#'.$_POST['d8'].'#'.$_POST['d9']."\n";
+    $data = $newId.'#'.$_POST['d1'].'#'.$_POST['d2'].'#'.$_POST['d3'].'#'.$_POST['d4'].'#'.$_POST['d5'].'#'.$_POST['d6'].'#'.$_POST['d7'].'#'.$_POST['d8'].'#'.$_POST['d9'].'#'.$_POST['d10']."\n";
     file_put_contents($filename, $data, FILE_APPEND);
 }
  ?>
@@ -32,10 +32,9 @@
    <div class="signin"> 
 
     <div class="content"> 
-        <form method="POST">
+        <form method="POST" class="form">
      <h2>Регистрация</h2> 
 
-     <div class="form"> 
 
       <div class="inputBox"> 
        <input type="text" required name="d1"> <i>Фамилия</i> 
@@ -77,9 +76,13 @@
       <div class="inputBox"> 
        <input type="birthday" required name="d9"> <i>Должность</i> 
       </div> 
-      <div class="links"> <a href="index.html">Есть аккаунт?</a> <a href="index.html">Войти</a> 
+            <div class="inputBox"> 
+       <input type="birthday" required name="d10"> <i>Отдел</i> 
+      </div> 
+      <div class="links"> <a href="auto.html">Есть аккаунт?</a> <a href="auto.html">Войти</a> 
 
       </div> 
+
 
       <div class="inputBox"> 
 
@@ -90,8 +93,6 @@
      </div> 
 
     </div> 
-
-   </div> 
 </form>
   </section> <!-- partial --> 
 

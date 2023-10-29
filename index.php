@@ -42,7 +42,7 @@ if ($_GET['action'] == 'out')
         </tr>
         <tr class="table-tr">
             <td>
-                <a href="null" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Возможности</a>
+                <a href="vozm.php" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Возможности</a>
             </td>
             <td rowspan="4" valign="top" style="color:#ffffff;">
                 <div>
@@ -52,31 +52,24 @@ if ($_GET['action'] == 'out')
         </tr>
         <tr class="table-tr">
             <td>
-                <a href="null" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Тарифы</a>
+                <a href="tarif.php" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Тарифы</a>
             </td>
         </tr>
         <tr class="table-tr">
             <td>
-                <a href="null" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Отзывы</a>
+                <a href="otzovik.php" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Отзывы</a>
             </td>
         </tr>
         <tr class="table-tr">
             <td>
-                <a href="null" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Поддержка</a>
+                <a href="support.php" style="color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;">Поддержка</a>
             </td>
         </tr>
     </table>
      <div class="form"> 
-
-      
      </div> 
-
     </div> 
-
    </div> 
-
   </section> <!-- partial --> 
-
  </body>
-
 </html>

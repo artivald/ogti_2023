@@ -1,69 +1,110 @@
 <?php 
 session_start();
 include_once("phhp.php");
+if ($_GET['action'] == 'out')
+    {unset($_SESSION['idUser']);}
 ?>
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПрофТестиум</title>
-    <link href="styleMain.css" rel="stylesheet">
-</head>
-<body>
-<style type="text/css">
-    p{
-        color:#FFFFFF;
-        font-size: 16px;
-    }
-</style>
+<!doctype html>
+<html lang="ru"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title>ПрофТестиум</title> 
+  <link rel="stylesheet" href="./styleMain.css"> 
+ </head> 
+ <body> <!-- partial:index.partial.html --> 
   <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
+   <div class="signin"> 
+    <div class="content"> 
+    <table class="table">
 
-    <div class="signin">
-    <div class="content">
-	<div class="headerRab"><a href="index.php"><img src="logo.png" width="5%" alt="Логотип"></a></div>
-    <div class="profileInfo">
-	<?php 
-if (isset($_SESSION['idUser'])) 
-{
-    $idUser = $_SESSION['idUser'];
-    $users_file = 'users.txt';
-    $users = file($users_file);
-    echo "<p class=\"profile\">Профиль</p>";
-    foreach ($users as $user) 
-    {
-        $row = explode("#", $user);
-        if (trim($row[0]) == $_SESSION['idUser']) 
-        {
-            echo "<p>ID пользователя: {$row[0]}<br></p>";
-            echo "<p>Фамилия: {$row[1]}<br></p>";
-            echo "<p>Имя: {$row[2]}</p><br>";
-            echo "<p>Отчество: {$row[3]}</p><br>";
-            echo "<p>Телефон: {$row[6]}</p><br>";
-            echo "<p>Почта: {$row[7]}</p><br>";
-            echo "<p>Дата рождения: {$row[8]}</p><br>";
-            echo "<p>Специальность: {$row[9]}</p><br>";
-             echo "<p>Отдел: {$row[10]}</p><br>";
-             echo "<td align=\"left\">
-                <a href=\"index.php?action=out\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Выход</a><br>
-                </td>";
-            echo "<a href=\"test.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Тесты</a><br>";
-            echo "<p></p>";
-            if ( $_SESSION['$right'] == "Системный администратор" || $_SESSION['$right'] == "hr-менеджер")
-            {
-                echo "<a href=\"moderUser.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Пользователи</a><br>; 
-                <a href=\"testUser.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Тесты пользователей</a><br>"; 
-            }
+        <tr class="table-top">
+            <td>
+                <div class="headerRab"><a href="index.php"><img src="logo.png" width="10%" alt="Логотип"></a></div>
+            </td>
+            <?php 
+                   If (isset($_SESSION['idUser']))
+                   {
+                    echo "<td align=\"right\">
+                <a href=\"rab.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Профиль</a>
+                    </td>";
+                   }
+                   else
+                   {
+                            echo    "<td align=\"right\">
+                     <a href=\"auto.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Авторизация/</a>
+                         </td>
+                          <td align=\"left\">
+                      <a href=\"reg.php\" style=\"color:#00ff00; text-decoration:none; font-size:16px; font-family:Arial;\">Регистрация</a>
+                         </td>";
+                        }
+             ?>
 
+        </tr>
+        <tr class="table-tr">
+            <td valign="top">
+<h2>Тарифы</h2>
+<div style="color: white; margin-left: 10px; max-height: 500px; font-size: 15px;">
+<p>Выберите подходящий тариф для вашей компании:</p>
 
-            break; 
-        }
-    }
-}
-	 ?>
-    </div>
-    </div>
+<div class="tariff">
+<h3>Стартовый</h3>
+<ul>
+<li>До 10 пользователей</li>
+<li>2 GB хранилища</li>
+<li>Базовый функционал</li>
+<li>Поддержка по электронной почте</li>
+</ul>
+<p>Цена: 500 руб/мес</p>
 </div>
-</body>
+
+<div class="tariff">
+<h3>Стандартный</h3>
+<ul>
+<li>До 50 пользователей</li>
+<li>5 GB хранилища</li> 
+<li>Расширенный функционал</li>
+<li>Круглосуточная техподдержка</li>
+<li>Индивидуальные отчеты</li>
+</ul>
+<p>Цена: 1500 руб/мес</p>
+</div>
+
+<div class="tariff">
+<h3>Профессиональный</h3>
+<ul>
+<li>До 100 пользователей</li>
+<li>10 GB хранилища</li>
+<li>Полный функционал</li> 
+<li>Персональный менеджер</li>
+<li>Интеграция с 1С</li>
+<li>API для внешних систем</li>
+</ul>
+<p>Цена: 3000 руб/мес</p>
+</div>
+
+<div class="tariff">
+<h3>Корпоративный</h3>
+<ul>
+<li>Безлимитное количество пользователей</li>
+<li>Неограниченное хранилище</li> 
+<li>Индивидуальная настройка системы</li>
+<li>Выделенный сервер</li>
+<li>Служба внедрения и обучения</li>
+</ul>
+<p>Цена: по запросу</p>
+</div>
+
+<p>Для всех тарифов предусмотрен бесплатный пробный период 14 дней.</p>
+
+<p>Свяжитесь с нами для получения персонального предложения!</p>
+</div>
+            </td>
+        </tr>
+    </table>
+     <div class="form"> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- partial --> 
+ </body>
 </html>
